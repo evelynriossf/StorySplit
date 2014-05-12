@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title></title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+</head>
+<body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+              <div class="container">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                  <div class="navbar-brand">Story Splitter</div>
+                </div>
+                <div class="navbar-collapse collapse">
+                  <div class="navbar-brand navbar-right">
+                    by <a href="http://evelynrios.com">Evelyn Rios</a>
+                  </div>
+<!--           <form class="navbar-form navbar-right" role="form">
+            <div class="form-group">
+              <input type="text" class="form-control"  placeholder="Email" class="input type="text" class="form-control"  class="form-control" ">
+            </div>
+            <div class="form-group">
+              <input type="password" placeholder="Password" class="input type="text" class="form-control"  class="form-control" ">
+            </div>
+            <button type="submit" class="btn btn-success">Sign in</button>
+          </form> -->
+        </div><!--/.navbar-collapse -->
+      </div>
+    </div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Story Splitter</h1>
+        <p>Enter your story slugs and requirements below to automatically generate a story split. Fine-tune from there if desired. Newsroom morning editorial meetings will never be the same!</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <form class="form">
+
+        <p><button type="submit" class="submit btn btn-success btn-lg" role="button" data-toggle="modal" data-target=".bs-example-modal-lg">Split!</button></p>
+
+        <div class="row">
+          <div class="col-xs-2">
+            <h2>Reporter</h2>
+          </div>
+          <div class="col-xs-2">
+            <h2>Slug</h2>
+          </div>
+          <div class="col-xs-2">
+            <h2>Hits</h2>
+          </div>
+          <div class="col-xs-2">
+            <h2>Lede</h2>
+          </div>
+          <div class="col-xs-4">
+            <h2>Exclusivity</h2>
+          </div>
+        </div>
+
+        <div class="row form-group">
+          <div class="col-xs-2">
+            <input type="text" class="form-control reporter"  name="reporter1">
+          </div>
+          <div class="col-xs-2">
+            <input type="text" class="form-control slug"  name="slug1">
+          </div>
+          <div class="col-xs-2">
+            <label class="radio-inline">
+              1<input type="radio" name="slug1hits" value="1hit">
+            </label>
+            <label class="radio-inline">
+              2<input type="radio" name="slug1hits" value="2hits">
+            </label>
+            <label class="radio-inline">
+              3<input type="radio" name="slug1hits" value="3hits">
+            </label>
+          </div>
+          <div class="col-xs-2">
+            <input type="checkbox" name="slug1lede" value="lede1">
+          </div>
+          <div class="col-xs-4">
+            <label class="radio-inline">
+              None<input type="radio" class="exclusivity" name="slug1exclusivity" value="none" checked>
+            </label>
+            <label class="radio-inline">
+              4 Only<input type="radio" class="exclusivity" name="slug1exclusivity" value="4only">
+            </label>
+            <label class="radio-inline">
+              5 Only<input type="radio" class="exclusivity" name="slug1exclusivity" value="5only">
+            </label>
+            <label class="radio-inline">
+              6 Only<input type="radio" class="exclusivity" name="slug1exclusivity" value="6only">
+            </label>             
+          </div>
+        </div>
+
+        <div class="row form-group">
+         <div class="col-xs-2">
+          <input type="text" class="form-control reporter" name="reporter2">
+        </div>
+        <div class="col-xs-2">
+          <input type="text" class="form-control slug" name="slug2">
+        </div>
+        <div class="col-xs-2">
+          <label class="radio-inline">
+            1<input type="radio" name="slug2hits" value="1hit">
+          </label>
+          <label class="radio-inline">
+            2<input type="radio" name="slug2hits" value="2hits">
+          </label>
+          <label class="radio-inline">
+            3<input type="radio" name="slug2hits" value="3hits">
+          </label>
+        </div>
+        <div class="col-xs-2">
+          <input type="checkbox" name="slug2lede" value="lede1">
+        </div>
+        <div class="col-xs-4">
+          <label class="radio-inline">
+            None<input type="radio" class="exclusivity" name="slug2exclusivity" value="none" checked>
+          </label>
+          <label class="radio-inline">
+            4 Only<input type="radio" class="exclusivity" name="slug2exclusivity" value="4only">
+          </label>
+          <label class="radio-inline">
+            5 Only<input type="radio" class="exclusivity" name="slug2exclusivity" value="5only">
+          </label>
+          <label class="radio-inline">
+            6 Only<input type="radio" class="exclusivity" name="slug2exclusivity" value="6only">
+          </label>             
+        </div>
+      </div>
+
+      <div class="row form-group">
+       <div class="col-xs-2">
+        <input type="text" class="form-control reporter"  name="reporter3">
+      </div>
+      <div class="col-xs-2">
+        <input type="text" class="form-control slug"  name="slug3">
+      </div>
+      <div class="col-xs-2">
+        <label class="radio-inline">
+          1<input type="radio" name="slug3hits" value="1hit">
+        </label>
+        <label class="radio-inline">
+          2<input type="radio" name="slug3hits" value="2hits">
+        </label>
+        <label class="radio-inline">
+          3<input type="radio" name="slug3hits" value="3hits">
+        </label>
+      </div>
+      <div class="col-xs-2">
+        <input type="checkbox" name="slug3lede" value="lede1">
+      </div>
+      <div class="col-xs-4">
+        <label class="radio-inline">
+          None<input type="radio" class="exclusivity" name="slug3exclusivity" value="none" checked>
+        </label>
+        <label class="radio-inline">
+          4 Only<input type="radio" class="exclusivity" name="slug3exclusivity" value="4only">
+        </label>
+        <label class="radio-inline">
+          5 Only<input type="radio" class="exclusivity" name="slug3exclusivity" value="5only">
+        </label>
+        <label class="radio-inline">
+          6 Only<input type="radio" class="exclusivity" name="slug3exclusivity" value="6only">
+        </label>             
+      </div>
+    </div>
+
+    <div class="row form-group">
+     <div class="col-xs-2">
+      <input type="text" class="form-control"  name="reporter4">
+    </div>
+    <div class="col-xs-2">
+      <input type="text" class="form-control"  name="slug4">
+    </div>
+    <div class="col-xs-2">
+      <label class="radio-inline">
+        1<input type="radio" name="slug4hits" value="1hit">
+      </label>
+      <label class="radio-inline">
+        2<input type="radio" name="slug4hits" value="2hits">
+      </label>
+      <label class="radio-inline">
+        3<input type="radio" name="slug4hits" value="3hits">
+      </label>
+    </div>
+    <div class="col-xs-2">
+      <input type="checkbox" name="slug4lede" value="lede1">
+    </div>
+    <div class="col-xs-4">
+      <label class="radio-inline">
+        None<input type="radio" class="exclusivity" name="slug4exclusivity" value="none" checked>
+      </label>
+      <label class="radio-inline">
+        4 Only<input type="radio" name="slug4exclusivity" value="4only">
+      </label>
+      <label class="radio-inline">
+        5 Only<input type="radio" name="slug4exclusivity" value="5only">
+      </label>
+      <label class="radio-inline">
+        6 Only<input type="radio" name="slug4exclusivity" value="6only">
+      </label>             
+    </div>
+  </div>
+
+  <div class="row form-group">
+   <div class="col-xs-2">
+    <input type="text" class="form-control"  name="reporter5">
+  </div>
+  <div class="col-xs-2">
+    <input type="text" class="form-control"  name="slug5">
+  </div>
+  <div class="col-xs-2">
+    <label class="radio-inline">
+      1<input type="radio" name="slug5hits" value="1hit">
+    </label>
+    <label class="radio-inline">
+      2<input type="radio" name="slug5hits" value="2hits">
+    </label>
+    <label class="radio-inline">
+      3<input type="radio" name="slug5hits" value="3hits">
+    </label>
+  </div>
+  <div class="col-xs-2">
+    <input type="checkbox" name="slug5lede" value="lede1">
+  </div>
+  <div class="col-xs-4">
+    <label class="radio-inline">
+      None<input type="radio" class="exclusivity" name="slug5exclusivity" value="none" checked>
+    </label> 
+    <label class="radio-inline">
+      4 Only<input type="radio" name="slug5exclusivity" value="4only">
+    </label>
+    <label class="radio-inline">
+      5 Only<input type="radio" name="slug5exclusivity" value="5only">
+    </label>
+    <label class="radio-inline">
+      6 Only<input type="radio" name="slug5exclusivity" value="6only">
+    </label>             
+  </div>
+</div>
+
+<div class="row form-group">
+ <div class="col-xs-2">
+  <input type="text" class="form-control"  name="reporter6">
+</div>
+<div class="col-xs-2">
+  <input type="text" class="form-control"  name="slug6">
+</div>
+<div class="col-xs-2">
+  <label class="radio-inline">
+    1<input type="radio" name="slug6hits" value="1hit">
+  </label>
+  <label class="radio-inline">
+    2<input type="radio" name="slug6hits" value="2hits">
+  </label>
+  <label class="radio-inline">
+    3<input type="radio" name="slug6hits" value="3hits">
+  </label>
+</div>
+<div class="col-xs-2">
+  <input type="checkbox" name="slug6lede" value="lede1">
+</div>
+<div class="col-xs-4">
+  <label class="radio-inline">
+    None<input type="radio" class="exclusivity" name="slug6exclusivity" value="none" checked>
+  </label>
+  <label class="radio-inline">
+    4 Only<input type="radio" name="slug6exclusivity" value="4only">
+  </label>
+  <label class="radio-inline">
+    5 Only<input type="radio" name="slug6exclusivity" value="5only">
+  </label>
+  <label class="radio-inline">
+    6 Only<input type="radio" name="slug6exclusivity" value="6only">
+  </label>             
+</div>
+</div>
+
+<div class="row form-group">
+ <div class="col-xs-2">
+  <input type="text" class="form-control"  name="reporter7">
+</div>
+<div class="col-xs-2">
+  <input type="text" class="form-control"  name="slug7">
+</div>
+<div class="col-xs-2">
+  <label class="radio-inline">
+    1<input type="radio" name="slug7hits" value="1hit">
+  </label>
+  <label class="radio-inline">
+    2<input type="radio" name="slug7hits" value="2hits">
+  </label>
+  <label class="radio-inline">
+    3<input type="radio" name="slug7hits" value="3hits">
+  </label>
+</div>
+<div class="col-xs-2">
+  <input type="checkbox" name="slug7lede" value="lede1">
+</div>
+<div class="col-xs-4">
+  <label class="radio-inline">
+    None<input type="radio" class="exclusivity" name="slug7exclusivity" value="none" checked>
+  </label>
+  <label class="radio-inline">
+    4 Only<input type="radio" name="slug7exclusivity" value="4only">
+  </label>
+  <label class="radio-inline">
+    5 Only<input type="radio" name="slug7exclusivity" value="5only">
+  </label>
+  <label class="radio-inline">
+    6 Only<input type="radio" name="slug7exclusivity" value="6only">
+  </label>             
+</div>
+</div>
+
+<div class="row form-group">
+ <div class="col-xs-2">
+  <input type="text" class="form-control"  name="reporter8">
+</div>
+<div class="col-xs-2">
+  <input type="text" class="form-control"  name="slug8">
+</div>
+<div class="col-xs-2">
+  <label class="radio-inline">
+    1<input type="radio" name="slug8hits" value="1hit">
+  </label>
+  <label class="radio-inline">
+    2<input type="radio" name="slug8hits" value="2hits">
+  </label>
+  <label class="radio-inline">
+    3<input type="radio" name="slug8hits" value="3hits">
+  </label>
+</div>
+<div class="col-xs-2">
+  <input type="checkbox" name="slug8lede" value="lede1">
+</div>
+<div class="col-xs-4">
+  <label class="radio-inline">
+    None<input type="radio" class="exclusivity" name="slug8exclusivity" value="none" checked>
+  </label>
+  <label class="radio-inline">
+    4 Only<input type="radio" name="slug8exclusivity" value="4only">
+  </label>
+  <label class="radio-inline">
+    5 Only<input type="radio" name="slug8exclusivity" value="5only">
+  </label>
+  <label class="radio-inline">
+    6 Only<input type="radio" name="slug8exclusivity" value="6only">
+  </label>             
+</div>
+</div>
+
+<div class="row form-group">
+ <div class="col-xs-2">
+  <input type="text" class="form-control"  name="reporter9">
+</div>
+<div class="col-xs-2">
+  <input type="text" class="form-control"  name="slug9">
+</div>
+<div class="col-xs-2">
+  <label class="radio-inline">
+    1<input type="radio" name="slug9hits" value="1hit">
+  </label>
+  <label class="radio-inline">
+    2<input type="radio" name="slug9hits" value="2hits">
+  </label>
+  <label class="radio-inline">
+    3<input type="radio" name="slug9hits" value="3hits">
+  </label>
+</div>
+<div class="col-xs-2">
+  <input type="checkbox" name="slug9lede" value="lede1">
+</div>
+<div class="col-xs-4">
+  <label class="radio-inline">
+    None<input type="radio" class="exclusivity" name="slug9exclusivity" value="none" checked>
+  </label>
+  <label class="radio-inline">
+    4 Only<input type="radio" name="slug9exclusivity" value="4only">
+  </label>
+  <label class="radio-inline">
+    5 Only<input type="radio" name="slug9exclusivity" value="5only">
+  </label>
+  <label class="radio-inline">
+    6 Only<input type="radio" name="slug9exclusivity" value="6only">
+  </label>             
+</div>
+</div>
+
+<div class="row form-group">
+ <div class="col-xs-2">
+  <input type="text" class="form-control"  name="reporter10">
+</div>
+<div class="col-xs-2">
+  <input type="text" class="form-control"  name="slug10">
+</div>
+<div class="col-xs-2">
+  <label class="radio-inline">
+    1<input type="radio" name="slug10hits" value="1hit">
+  </label>
+  <label class="radio-inline">
+    2<input type="radio" name="slug10hits" value="2hits">
+  </label>
+  <label class="radio-inline">
+    3<input type="radio" name="slug10hits" value="3hits">
+  </label>
+</div>
+<div class="col-xs-2">
+  <input type="checkbox" name="slug10lede" value="lede1">
+</div>
+<div class="col-xs-4">
+  <label class="radio-inline">
+    None<input type="radio" class="exclusivity" name="slug10exclusivity" value="none" checked>
+  </label>
+  <label class="radio-inline">
+    4 Only<input type="radio" name="slug10exclusivity" value="4only">
+  </label>
+  <label class="radio-inline">
+    5 Only<input type="radio" name="slug10exclusivity" value="5only">
+  </label>
+  <label class="radio-inline">
+    6 Only<input type="radio" name="slug10exclusivity" value="6only">
+  </label>             
+</div>
+</div>
+
+</form>
+
+</div>
+
+<div class="modal fade bs-example-modal-lg" id="Modal" tabindex="-1" role="dialog" aria-labelledby="LargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Today's Split:</h4>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-3">
+              4PM Show
+            </div>
+            <div class="col-xs-3">
+              5PM Show
+            </div>
+            <div class="col-xs-3">
+              6PM Show
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<hr>
+
+<footer>
+  <p>&copy; Evelyn Rios 2014</p>
+</footer>
+</div> <!-- /container -->        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.0.min.js"><\/script>')</script>
+
+<script src="js/vendor/bootstrap.min.js"></script>
+
+<script src="js/main.js"></script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+    //   (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    //     function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    //   e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    //   e.src='//www.google-analytics.com/analytics.js';
+    //   r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    //   ga('create','UA-XXXXX-X');ga('send','pageview');
+    // </script>
+  </body>
+  </html>
