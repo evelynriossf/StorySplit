@@ -5,7 +5,7 @@ $(document).ready(function(){
 		var d = new Date();
 		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 		console.log(document.getElementById("modalLabel").innerHTML);
-		document.getElementById("modalLabel").innerHTML = days[d.getDay()] + "'s Split:";
+		document.getElementById("modalLabel").innerHTML = d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " " + days[d.getDay()] + "'s Split:";
 
 		var fourPM = [];
 		var fivePM = [];
