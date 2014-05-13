@@ -18,13 +18,14 @@ $(document).ready(function(){
 			tempObject["slug"] = slug;
 			var lede = $(this).find('[type=checkbox]').is(':checked');
 			tempObject["lede"] = lede;
-			var $RButtons = $(this).find('.exclusivity');
+			var $exclusivityButtons = $(this).find('.exclusivity');
 			var tempArray = new Array();
 			var i = 0;
-			jQuery.each($RButtons, function () {
+			jQuery.each($exclusivityButtons, function () {
 				if ($(this).is(':checked')) {
 					var value = $(this).attr('value');
 					tempArray[i] = value;
+					console.log(tempArray);
 					i++;
 				}
 			});
