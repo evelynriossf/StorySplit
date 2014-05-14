@@ -2,9 +2,12 @@ $(document).ready(function(){
 	$('.submit').click(function(e){
 		e.preventDefault();
 
+		$( '.4PMmodal' ).empty();
+		$( '.5PMmodal' ).empty();
+		$( '.6PMmodal' ).empty();
+
 		var d = new Date();
 		var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
-		console.log(document.getElementById("modalLabel").innerHTML);
 		document.getElementById("modalLabel").innerHTML = d.getMonth() + "/" + d.getDate() + "/" + d.getFullYear() + " " + days[d.getDay()] + "'s Split:";
 
 		var fourPM = [];
@@ -18,10 +21,10 @@ $(document).ready(function(){
 			tempObject["slug"] = slug;
 			var lede = $(this).find('[type=checkbox]').is(':checked');
 			tempObject["lede"] = lede;
-			var $exclusivityButtons = $(this).find('.exclusivity');
+			var exclusivityRadios = $(this).find('.exclusivity');
 			var tempArray = new Array();
 			var i = 0;
-			jQuery.each($exclusivityButtons, function () {
+			jQuery.each(exclusivityRadios, function () {
 				if ($(this).is(':checked')) {
 					var value = $(this).attr('value');
 					tempArray[i] = value;
