@@ -21,22 +21,33 @@ $(document).ready(function(){
 			tempObject["slug"] = slug;
 			var lede = $(this).find('[type=checkbox]').is(':checked');
 			tempObject["lede"] = lede;
+
 			var exclusivityRadios = $(this).find('.exclusivity');
-			var tempArray = new Array();
-			var i = 0;
+			var exclusivityValue = exclusivityRadios.attr('value');
+
+			var hitsRadios = $(this).find('.hits');
+			var hitsValue;
 			jQuery.each(exclusivityRadios, function () {
 				if ($(this).is(':checked')) {
-					var value = $(this).attr('value');
-					tempArray[i] = value;
-					console.log(tempArray);
-					i++;
+					hitsValue = $(this).attr('value');
 				}
 			});
-			if (tempArray == "4only") {
+			if (hitsValue != "1"){
+				exclusivityValue = "none";
+
+			};
+
+			
+			jQuery.each(exclusivityRadios, function () {
+				if ($(this).is(':checked')) {
+					exclusivityValue = $(this).attr('value');
+				}
+			});
+			if (exclusivityValue == "4only") {
 				fourPM.push(tempObject);					
-			} else if (tempArray == "5only") {
+			} else if (exclusivityValue == "5only") {
 				fivePM.push(tempObject);		
-			} else if (tempArray == "6only") {
+			} else if (exclusivityValue == "6only") {
 				sixPM.push(tempObject);
 			} else {
 				var computerChoice = Math.random();
