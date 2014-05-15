@@ -60,19 +60,19 @@ $(document).ready(function(){
 				}
 			}
 		});
-		function sorter(obj1, obj2) {
-			return obj2.lede - obj1.lede;
-		}
-		fourPM.sort(sorter);
-		fivePM.sort(sorter);
-		sixPM.sort(sorter);
+function sorter(obj1, obj2) {
+	return obj2.lede - obj1.lede;
+}
+fourPM.sort(sorter);
+fivePM.sort(sorter);
+sixPM.sort(sorter);
 		// console.log(fourPM);
 		// console.log(fivePM);
 		// console.log(sixPM);
 		function createDiv(obj){
 			var storyName = obj.slug;
 			var reporterName = obj.reporter;
-			var contentString = '<div>' + reporterName + ' - ' + storyName + '</div>';
+			var contentString = '<div class=well span2 title>' + reporterName + ' - ' + storyName + '</div>';
 			var div = document.createElement('div');
 			div.innerHTML = contentString;
 			return div;
@@ -89,6 +89,15 @@ $(document).ready(function(){
 					$('.6PMmodal').append(createdDiv);
 				}
 			}
+		});
+
+		$(function () {
+			$(".grid").sortable({
+				tolerance: 'pointer',
+				revert: 'invalid',
+				placeholder: 'span2 well tile',
+				forceHelperSize: true
+			});
 		});
 
 	});
