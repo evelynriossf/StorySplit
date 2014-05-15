@@ -72,7 +72,7 @@ sixPM.sort(sorter);
 		function createDiv(obj){
 			var storyName = obj.slug;
 			var reporterName = obj.reporter;
-			var contentString = '<div class=well span2 title>' + reporterName + ' - ' + storyName + '</div>';
+			var contentString = '<div class="well title">' + reporterName + ' - ' + storyName + '</div>';
 			var div = document.createElement('div');
 			div.innerHTML = contentString;
 			return div;
@@ -95,7 +95,8 @@ sixPM.sort(sorter);
 			$(".grid").sortable({
 				tolerance: 'pointer',
 				revert: 'invalid',
-				placeholder: 'span2 well tile',
+				connectWith: ".connectedSortable",
+				// placeholder: 'span2 well tile',
 				forceHelperSize: true
 			});
 		});
