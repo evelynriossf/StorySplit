@@ -23,20 +23,16 @@ $(document).ready(function(){
 			tempObject["lede"] = lede;
 
 			var exclusivityRadios = $(this).find('.exclusivity');
-			var exclusivityValue = exclusivityRadios.attr('value');
+			var exclusivityValue;
 
 			var hitsRadios = $(this).find('.hits');
 			var hitsValue;
-			jQuery.each(exclusivityRadios, function () {
+			jQuery.each(hitsRadios, function () {
 				if ($(this).is(':checked')) {
 					hitsValue = $(this).attr('value');
+					console.log(hitsValue);
 				}
 			});
-			if (hitsValue != "1"){
-				exclusivityValue = "none";
-
-			};
-
 			
 			jQuery.each(exclusivityRadios, function () {
 				if ($(this).is(':checked')) {
@@ -48,6 +44,10 @@ $(document).ready(function(){
 			} else if (exclusivityValue == "5only") {
 				fivePM.push(tempObject);		
 			} else if (exclusivityValue == "6only") {
+				sixPM.push(tempObject);
+			} else if (hitsValue == "3hits"){
+				fourPM.push(tempObject);
+				fivePM.push(tempObject);
 				sixPM.push(tempObject);
 			} else {
 				var computerChoice = Math.random();
