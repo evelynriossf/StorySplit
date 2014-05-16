@@ -30,7 +30,6 @@ $(document).ready(function(){
 			jQuery.each(hitsRadios, function () {
 				if ($(this).is(':checked')) {
 					hitsValue = $(this).attr('value');
-					console.log(hitsValue);
 				}
 			});
 			
@@ -60,46 +59,44 @@ $(document).ready(function(){
 				}
 			}
 		});
-function sorter(obj1, obj2) {
-	return obj2.lede - obj1.lede;
-}
-fourPM.sort(sorter);
-fivePM.sort(sorter);
-sixPM.sort(sorter);
-		// console.log(fourPM);
-		// console.log(fivePM);
-		// console.log(sixPM);
-		function createDiv(obj){
-			var storyName = obj.slug;
-			var reporterName = obj.reporter;
-			var contentString = '<div class="well title">' + reporterName + ' - ' + storyName + '</div>';
-			var div = document.createElement('div');
-			div.innerHTML = contentString;
-			return div;
+
+	function sorter(obj1, obj2) {
+		return obj2.lede - obj1.lede;
+	}
+	fourPM.sort(sorter);
+	fivePM.sort(sorter);
+	sixPM.sort(sorter);
+	
+	function createDiv(obj){
+		var storyName = obj.slug;
+		var reporterName = obj.reporter;
+		var contentString = '<div class="well title">' + reporterName + ' - ' + storyName + '</div>';
+		var div = document.createElement('div');
+		div.innerHTML = contentString;
+		return div;
+	}
+	var arr = [fourPM, fivePM, sixPM];
+	jQuery.each(arr, function(index, value){
+		for (var i = 0; i < value.length; i++) {
+			var createdDiv = createDiv(value[i]);
+			if (index == 0){
+				$('.4PMmodal').append(createdDiv);
+		} else if (index == 1){
+			$('.5PMmodal').append(createdDiv);
+		} else {
+			$('.6PMmodal').append(createdDiv);
 		}
-		var arr = [fourPM, fivePM, sixPM];
-		jQuery.each(arr, function(index, value){
-			for (var i = 0; i < value.length; i++) {
-				var createdDiv = createDiv(value[i]);
-				if (index == 0){
-					$('.4PMmodal').append(createdDiv);
-				} else if (index == 1){
-					$('.5PMmodal').append(createdDiv);
-				} else {
-					$('.6PMmodal').append(createdDiv);
-				}
-			}
-		});
+	}
+	});
 
-		$(function () {
-			$(".grid").sortable({
-				tolerance: 'pointer',
-				revert: 'invalid',
-				connectWith: ".connectedSortable",
-				// placeholder: 'span2 well tile',
-				forceHelperSize: true
-			});
+	$(function () {
+		$(".grid").sortable({
+			tolerance: 'pointer',
+			revert: 'invalid',
+			connectWith: ".connectedSortable",
+			forceHelperSize: true
 		});
-
+	});
+	
 	});
 });
