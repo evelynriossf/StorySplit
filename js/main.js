@@ -48,6 +48,8 @@ $(document).ready(function(){
 				fourPM.push(tempObject);
 				fivePM.push(tempObject);
 				sixPM.push(tempObject);
+			} else if (hitsValue == "2hits") {
+
 			} else {
 				var computerChoice = Math.random();
 				if (computerChoice < 0.34) {
@@ -66,14 +68,14 @@ $(document).ready(function(){
 	fourPM.sort(sorter);
 	fivePM.sort(sorter);
 	sixPM.sort(sorter);
-	
+
 	function createDiv(obj){
 		var storyName = obj.slug;
 		var reporterName = obj.reporter;
-		var contentString = '<div class="well title">' + reporterName + ' - ' + storyName + '</div>';
-		var div = document.createElement('div');
-		div.innerHTML = contentString;
-		return div;
+		var template = Handlebars.compile($("#data-template").html());
+		var context = {reporterName: reporterName, storyName: storyName}
+		var html    = template(context);
+		return html;
 	}
 	var arr = [fourPM, fivePM, sixPM];
 	jQuery.each(arr, function(index, value){
@@ -97,6 +99,6 @@ $(document).ready(function(){
 			forceHelperSize: true
 		});
 	});
-	
+
 	});
 });
