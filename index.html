@@ -230,10 +230,10 @@
 
   <div class="row form-group">
    <div class="col-xs-2">
-    <input type="text" class="form-control reporter"  name="reporter5">
+    <input type="text" class="form-control reporter"  name="reporter5" value="reporter5">
   </div>
   <div class="col-xs-2">
-    <input type="text" class="form-control slug"  name="slug5">
+    <input type="text" class="form-control slug"  name="slug5" value="slug5">
   </div>
   <div class="col-xs-2">
     <label class="radio-inline">
@@ -267,10 +267,10 @@
 
 <div class="row form-group">
  <div class="col-xs-2">
-  <input type="text" class="form-control reporter"  name="reporter6">
+  <input type="text" class="form-control reporter"  name="reporter6" value="reporter6">
 </div>
 <div class="col-xs-2">
-  <input type="text" class="form-control slug"  name="slug6">
+  <input type="text" class="form-control slug"  name="slug6" value="slug6">
 </div>
 <div class="col-xs-2">
   <label class="radio-inline">
@@ -304,10 +304,10 @@
 
 <div class="row form-group">
  <div class="col-xs-2">
-  <input type="text" class="form-control reporter"  name="reporter7">
+  <input type="text" class="form-control reporter"  name="reporter7" value="reporter7">
 </div>
 <div class="col-xs-2">
-  <input type="text" class="form-control slug"  name="slug7">
+  <input type="text" class="form-control slug"  name="slug7" value="slug7">
 </div>
 <div class="col-xs-2">
   <label class="radio-inline">
@@ -497,9 +497,11 @@
 
 <!-- Handlebars template-->
 <script id="data-template" type="text/x-handlebars-template">
+{{#if reporterName}}
 <div class="well title">
 {{reporterName}} - {{storyName}}
 </div>
+{{/if}}
 </script>
 
 <!--vendor js libraries -->
