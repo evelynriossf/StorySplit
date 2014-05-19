@@ -1,4 +1,7 @@
 $(document).ready(function(){
+
+
+	
 	$('.submit').click(function(e){
 		e.preventDefault();
 
@@ -91,43 +94,43 @@ $(document).ready(function(){
 			}
 		});
 
-function sorter(obj1, obj2) {
-	return obj2.lede - obj1.lede;
-}
-fourPM.sort(sorter);
-fivePM.sort(sorter);
-sixPM.sort(sorter);
+	    function sorter(obj1, obj2) {
+	    	return obj2.lede - obj1.lede;
+	    }
+	    fourPM.sort(sorter);
+	    fivePM.sort(sorter);
+	    sixPM.sort(sorter);
 
-function createDiv(obj){
-	var storyName = obj.slug;
-	var reporterName = obj.reporter;
-	var template = Handlebars.compile($("#data-template").html());
-	var context = {reporterName: reporterName, storyName: storyName}
-	var html    = template(context);
-	return html;
-}
-var arr = [fourPM, fivePM, sixPM];
-jQuery.each(arr, function(index, value){
-	for (var i = 0; i < value.length; i++) {
-		var createdDiv = createDiv(value[i]);
-		if (index == 0){
-			$('.4PMmodal').append(createdDiv);
-		} else if (index == 1){
-			$('.5PMmodal').append(createdDiv);
-		} else {
-			$('.6PMmodal').append(createdDiv);
-		}
-	}
-});
+	    function createDiv(obj){
+	    	var storyName = obj.slug;
+	    	var reporterName = obj.reporter;
+	    	var template = Handlebars.compile($("#data-template").html());
+	    	var context = {reporterName: reporterName, storyName: storyName}
+	    	var html    = template(context);
+	    	return html;
+	    }
+	    var arr = [fourPM, fivePM, sixPM];
+	    jQuery.each(arr, function(index, value){
+	    	for (var i = 0; i < value.length; i++) {
+	    		var createdDiv = createDiv(value[i]);
+	    		if (index == 0){
+	    			$('.4PMmodal').append(createdDiv);
+	    		} else if (index == 1){
+	    			$('.5PMmodal').append(createdDiv);
+	    		} else {
+	    			$('.6PMmodal').append(createdDiv);
+	    		}
+	    	}
+	    });
 
-$(function () {
-	$(".grid").sortable({
-		tolerance: 'pointer',
-		revert: 'invalid',
-		connectWith: ".connectedSortable",
-		forceHelperSize: true
+	    $(function () {
+	    	$(".grid").sortable({
+	    		tolerance: 'pointer',
+	    		revert: 'invalid',
+	    		connectWith: ".connectedSortable",
+	    		forceHelperSize: true
+	    	});
+	    });
+
 	});
-});
-
-});
 });
