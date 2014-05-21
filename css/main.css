@@ -8,6 +8,7 @@ body {
 }
 .grid {
     margin-top: 1em;
+    min-height: 100px;
 }
 
 @media print {
