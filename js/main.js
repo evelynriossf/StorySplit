@@ -1,22 +1,18 @@
 $(document).ready(function(){
 
-
-	$('hits').click(function(e){
-		e.preventDefault();
-		console.log("success");
-		function changeExclusivity(){
-			$('.form-group').each(function(){
-				var hitsRadios = $(this).find('.hits');
-				jQuery.each(hitsRadios, function (){
-					if ($(this).is(':checked')) {
-						console.log (this);
-					}
-				});
-			// if ($(this).attr('value') == "1hit"){
-			// 	$('input[name=foo]').attr('checked', true);
+	$('.form-group').each(function(){
+		var formGroup = $(this);
+		formGroup.find('.hits').change(function(e){
+			var value = $(this).val();
+			var fieldset = formGroup.find('.fieldset');
+			if (value == "1hit") {
+				fieldset.removeAttr('disabled');
+			}
+			else if (value == "2hits" || "3hits"){
+				$(":radio[value=none]").prop('checked', true);
+				fieldset.attr("disabled", "disabled");
+			}
 		});
-		}
-		changeExclusivity();
 	});
 
 	$('.submit').click(function(e){
@@ -55,7 +51,7 @@ $(document).ready(function(){
 					hitsValue = $(this).attr('value');
 				}
 			});
-			
+
 			jQuery.each(exclusivityRadios, function () {
 				if ($(this).is(':checked')) {
 					exclusivityValue = $(this).attr('value');
