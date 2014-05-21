@@ -9,7 +9,7 @@ $(document).ready(function(){
 				fieldset.removeAttr('disabled');
 			}
 			else if (value == "2hits" || "3hits"){
-				$(":radio[value=none]").prop('checked', true);
+				fieldset.find(":radio[value=none]").prop('checked', true);
 				fieldset.attr("disabled", "disabled");
 			}
 		});
